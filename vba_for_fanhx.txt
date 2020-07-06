@@ -1,0 +1,50 @@
+Sub OutputBtn_Click()
+    Dim i As Integer
+    Dim j As Integer
+    Dim k As Integer
+    
+    For i = 2 To 20
+        For j = 2 To 20
+            If Sheets(1).Cells(i, 1) = Sheets(2).Cells(j, 1) Then
+                Sheets(2).Cells(j, 2).Value = Sheets(1).Cells(i, 2)
+                For k = 3 To 20
+                    If Sheets(1).Cells(i, 3) = Sheets(2).Cells(1, k) Then
+                        Sheets(2).Cells(j, k).Value = Sheets(1).Cells(i, 4)
+                    End If
+                Next
+            End If
+        Next
+    Next
+
+End Sub
+
+
+Sub OutputBtn2_Click()
+    Dim i As Integer
+    Dim j As Integer
+    Dim k As Integer
+    
+    For i = 2 To 20
+        For j = 2 To 20
+            If Sheets(1).Cells(i, 1) = Sheets(3).Cells(j, 1) Then
+                Sheets(3).Cells(j, 2).Value = Sheets(1).Cells(i, 2)
+                For k = 3 To 20
+                    If Sheets(1).Cells(i, 3) = Sheets(3).Cells(1, k) Then
+                        Sheets(3).Cells(j, k).Value = Sheets(1).Cells(i, 4)
+                    End If
+                Next
+            End If
+        Next
+    Next
+    
+    For i = 2 To 20
+        For j = 3 To 20
+            If Sheets(3).Cells(i, j) = "" Then
+                Sheets(3).Cells(i, j).Value = "ﾗﾔﾕｬ"
+                Exit For
+            End If
+        Next
+    Next
+
+End Sub
+
